@@ -45,7 +45,19 @@
     margin-right: -0.14em;
     line-height: 1;
   }
-  .wordmark .dot { color: var(--accent); }
+  /* dotless i (U+0131) with an accent-coloured dot drawn above it */
+  .wordmark .i { position: relative; display: inline-block; }
+  .wordmark .i::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - 0.07em);
+    top: 0.13em;
+    width: 0.085em;
+    height: 0.085em;
+    margin-left: -0.0425em;
+    border-radius: 50%;
+    background: var(--accent);
+  }
   hr {
     width: 48px;
     border: 0;
@@ -59,7 +71,7 @@
 </head>
 <body>
 <main>
-  <h1 class="wordmark">itritiv<span class="dot">.</span></h1>
+  <h1 class="wordmark" aria-label="itritiv"><span class="i" aria-hidden="true">ı</span><span aria-hidden="true">tr</span><span class="i" aria-hidden="true">ı</span><span aria-hidden="true">t</span><span class="i" aria-hidden="true">ı</span><span aria-hidden="true">v</span></h1>
   <hr>
   <p class="contact" id="contact">
     <noscript>contact at itritiv dot com</noscript>
